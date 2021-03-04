@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Task 1</title>
+    <style>
+        div {
+            width: 300px;
+            padding: 50px;
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var div = document.getElementsByTagName("div")[0];
+            document.getElementById("button").onclick = function () {
+                var input = document.getElementById("input").value;
+                input = parseInt(input);
+
+                if (input == 77) {
+                    div.innerHTML = "Вы угадали!!!";
+                    div.style.backgroundColor = "green";
+                }
+                else if (input < 77 && input > 0) {
+                    div.innerHTML = "Загаданное значение больше введенного вами";
+                    div.style.backgroundColor = "orange";
+                }
+                else if (input > 77 && input <= 100) {
+                    div.innerHTML = "Загаданное значение меньше введенного вами";
+                    div.style.backgroundColor = "yellow";
+                }
+                else {
+                    div.innerHTML = 'Введите значение от 1 до 100!';
+                    div.style.backgroundColor = 'red';
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <input type="text" id="input" />
+    <input type="button" id="button" value="Click" />
+    <div></div>
+</body>
+</html>
